@@ -9,6 +9,12 @@ except:
 #load editable non-constant data from the file
 def loadSaveFromDate(datestr):
 	date = datestr.split('/')
+	try:
+		f = open('saves/'+date[2]+'.txt')
+		f.close()
+	except:
+		f = open('saves/'+date[2]+'.txt','w')
+		f.close()
 	f = open('saves/'+date[2]+'.txt')
 	yearsdata = f.readlines()
 	f.close
@@ -20,7 +26,7 @@ def loadSaveFromDate(datestr):
 		event = event.split(';')
 		eventtime = event[0]
 		entry += 1
-	return event[1].rstrip()
+	return event[1].rstrip().replace('*#new#*','\n')
 
 #save the data to a file for the editable non-constant
 def saveDataToDate(data,date):
@@ -32,12 +38,18 @@ def saveDataToDate(data,date):
 	f = open('saves/'+year+'.txt','r')
 	file = f.readlines()
 	f.close()
+	print(date)
+	for a in range(len(file)):
+		if date in file[a-1]:
+			data = data+'*#new#*'+file[a-1].replace(date+';','')
+			file.pop(a-1)
+    
 	os.remove('saves/'+year+'.txt')
 	file.append(date+';'+data)
 	f = open('saves/'+year+'.txt','w')
 	for a in file:
 		f.write(a)
-		f.write('\n')
+		
 	f.close()
 
 #save data to the editable constant file
