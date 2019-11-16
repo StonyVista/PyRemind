@@ -6,7 +6,7 @@ try:
 except:
 	pass
 
-#load editable non-constant data from the file
+#Load editable non-constant data from the file
 def loadSaveFromDate(datestr):
 	date = datestr.split('/')
 	try:
@@ -28,7 +28,7 @@ def loadSaveFromDate(datestr):
 		entry += 1
 	return event[1].rstrip().replace('*#new#*','\n')
 
-#save the data to a file for the editable non-constant
+#Save the data to a file for the editable non-constant
 def saveDataToDate(data,date):
 	year = date.split('/')[2]
 	if os.path.exists('saves/'+year+'.txt') == False:
@@ -52,7 +52,7 @@ def saveDataToDate(data,date):
 		
 	f.close()
 
-#save data to the editable constant file
+#Save data to the editable constant file
 def saveConstantData(data):
 	try:
 		os.remove('saves/const.txt')
@@ -62,7 +62,7 @@ def saveConstantData(data):
 	f.write(data)
 	f.close()
 
-#loas data from the editable constant file
+#Loads data from the editable constant file
 def loadConstantData():
 	f = open('saves/const.txt')
 	data = f.read()

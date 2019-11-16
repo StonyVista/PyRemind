@@ -2,11 +2,15 @@ import pyremsavefunctions
 import time
 from datetime import datetime
 from plyer import notification
+
+#Returns the record time from the settings
 def getTime():
     f = open('saves/settings.txt','r')
     tim = f.read()
     f.close()
     return(tim)
+	
+
 def notify():
     try:
         data = pyremsavefunctions.loadSaveFromDate(datetime.now().strftime('%d/%m/%y'))+'\n(powered by pyRemind)'

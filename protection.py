@@ -1,6 +1,7 @@
 print('Started protection library')
 import hashlib
 
+#Checks MD5 Files to see if they can be opened and hashed
 def checkFileMD5(filename):
     hash_md5 = hashlib.md5()
     with open(filename, 'rb') as f:
