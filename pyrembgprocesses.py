@@ -3,7 +3,7 @@ import time
 from datetime import datetime
 from plyer import notification
 
-#Returns the record time from the settings
+#Returns the time interval from the settings
 def getTime():
     f = open('saves/settings.txt','r')
     tim = f.read()
