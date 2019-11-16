@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<!--- Use minifed (Small Version) of TailWindCSS (https://tailwindcss.com/) --->
+		<link rel = "stylesheet" type = "text/css" href = "tailwind.min.css" />	
+    </head>
+	<body>
+		
+		<!--- Main Area (Height Screen | Width Screen | Background Gray 300) --->
+		<div class="h-screen w-screen bg-gray-300">
+			
+			<!--- Max Half Width Area Centered ( From http://mustafaehsan.com/2017/tailwind-css-building-a-login-page/ ) --->
+			<div class="container h-full w-1/2 mx-auto flex justify-center items-center flex-wrap">
+
+				<!--- Title Area (Width Half | Text Center | Background White | Text Blue 400 | Large Shadow | Fully Rounded Corners) --->
+				<div class="w-1/2 text-center bg-white text-blue-400 shadow-lg rounded-full">  
+					<h1 class="text-xl p-4"> Hello "" ! </h1>
+					<h1 class="text-lg p-4"> Welcome to the Reminder GUI Area! </h1>
+					<h1 class="text-lg p-4"> Enjoy your stay. :) </h1>
+				</div>
+				
+				<!--- Add Reminder Area (Width 75% | Padding 6 | Text Center | Background White | Text Blue 400 | Medium Shadow | Large Rounded Corners) --->
+				<div class="w-3/4 p-6 text-center bg-white text-blue-400 shadow-md rounded-lg"> 
+				
+					<!--- Input Box --->
+					<div class="flex items-center mb-3">
+					
+						<!--- Input Title (Width 33% | Text Gray 700 | Font Bold | Padding Right 4) --->
+						<h3 class="w-1/3 text-gray-700 font-bold pr-4"> Reminder Title Name </h3>
+						
+						<!--- Input Field (Width 66% | Padding 2 | Background Gray 100 | Border 2 | Border Gray 400) --->
+						<input class="w-2/3 p-2 bg-gray-100 border-2 border-gray-400" id="inputTitle" type="text" placeholder="Reminder Title">
+					</div>
+					
+					<!--- Input Box --->
+					<div class="flex items-center mb-3">
+					
+						<!--- Input Title (Width 33% | Text Gray 700 | Font Bold | Padding Right 4) --->
+						<h3 class="w-1/3 text-gray-700 font-bold pr-4"> Reminder Text </h3>
+						
+						<!--- Input Field (Width 66% | Padding 2 | Background Gray 100 | Border 2 | Border Gray 400) --->
+						<input class="w-2/3 p-2 bg-gray-100 border-2 border-gray-400" id="inputBody" type="text" placeholder="Reminder Body">
+					</div>
+					
+					<!--- Input Box --->
+					<div class="flex items-center mb-3">
+					
+						<!--- Input Title (Width 33% | Text Gray 700 | Font Bold | Padding Right 4) --->
+						<h3 class="w-1/3 text-gray-700 font-bold pr-4"> Reminder Time </h3>
+						
+						<!--- Input Field (Width 66% | Padding 2 | Background Gray 100 | Border 2 | Border Gray 400) --->
+						<input class="w-2/3 p-2 bg-gray-100 border-2 border-gray-400" id="inputTime" type="text" placeholder="Reminder Time">
+					</div>
+					
+					<!--- Button to Submit (Width Half | Padding 2 | Background Gray 100 | Border 2 | Border Gray 200 | Fully Rounded Corners) --->
+					<button class="w-1/2 p-2 bg-gray-100 border-2 border-gray-200 rounded-full" onclick="DoPythonMagicBySendingFieldsToPython"> Make Reminders </button>
+					
+				</div>	
+				
+				<!--- Button for showing the hidden upcoming reminders ( Width Half | Padding 6 | Text Center | Background White | Large Shadow | Fully Rounded Corners) Calls Function onClick to Modify Spans and Reminders Area --->
+				<button class="w-1/2 p-6 text-center bg-white shadow-lg rounded-full" onclick="SwitchClassesAround()"> <span id="RemindersTextShow">Show</span> <span id="RemindersTextHide" class="hidden">Hide</span> Upcoming Reminders</button>			
+			</div>
+		</div>
+		
+		<!--- Reminders Area (Height Auto | Width Scren | Background Gray 300) --->
+		<div class="h-auto w-screen bg-gray-300">
+			<!--- Show Reminders Area (Width Half | Maring X Centered | Padding 6 | Text Center | Background Blue 100 | Medium Shadow | Large Rounded Corners | Hidden) --->
+			<div id="ShowRemindersArea" class="w-1/2 mx-auto p-6 text-center bg-blue-100 shadow-md rounded-lg hidden"></div>	
+		</div>
+		
+		<!--- Call Script --->
+		<script src="./GetReminders.js"></script>
+	</body>
+</html>
