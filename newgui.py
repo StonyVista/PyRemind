@@ -8,10 +8,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from datetime import datetime
-import pyremsavefunctions
 import pyremlegacyui
-
+import pyremsavefunctions
+from datetime import datetime
 
 
 class Ui_Form(object):
@@ -46,21 +45,30 @@ class Ui_Form(object):
         self.label_todaysreminders.setLineWidth(1)
         self.label_todaysreminders.setObjectName("label_todaysreminders")
         self.label_todaysreminders_2 = QtWidgets.QLabel(Form)
-        self.label_todaysreminders_2.setGeometry(QtCore.QRect(10, 65, 211, 211))
+        self.label_todaysreminders_2.setGeometry(QtCore.QRect(10, 65, 381, 121))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(10)
         self.label_todaysreminders_2.setFont(font)
         self.label_todaysreminders_2.setLineWidth(1)
         self.label_todaysreminders_2.setObjectName("label_todaysreminders_2")
-        self.btn_createnew_2 = QtWidgets.QPushButton(Form)
-        self.btn_createnew_2.setGeometry(QtCore.QRect(230, 190, 161, 51))
-        self.btn_createnew_2.setObjectName("btn_createnew_2")
+        self.btn_settings = QtWidgets.QPushButton(Form)
+        self.btn_settings.setGeometry(QtCore.QRect(230, 190, 161, 51))
+        self.btn_settings.setObjectName("btn_settings")
+        self.label_todaysreminders_3 = QtWidgets.QLabel(Form)
+        self.label_todaysreminders_3.setGeometry(QtCore.QRect(110, 260, 121, 41))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(10)
+        self.label_todaysreminders_3.setFont(font)
+        self.label_todaysreminders_3.setLineWidth(1)
+        self.label_todaysreminders_3.setObjectName("label_todaysreminders_3")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
-
         self.btn_createnew.clicked.connect(self.createNew)
+        self.btn_settings.clicked.connect(self.settingsMenu)
+
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -72,11 +80,14 @@ class Ui_Form(object):
             self.label_todaysreminders_2.setText(_translate("Form", pyremsavefunctions.loadSaveFromDate(datetime.now().strftime('%d/%m/%y'))))
         except:
             self.label_todaysreminders_2.setText(_translate("Form", 'No reminders found'))
-        self.btn_createnew_2.setText(_translate("Form", "Settings"))
+        self.btn_settings.setText(_translate("Form", "Settings"))
+        self.label_todaysreminders_3.setText(_translate("Form", "Version: "+pyremsavefunctions.getVersionInfo()))
 
     def createNew(self):
-        print('Hi!')
         pyremlegacyui.addevent()
+    def settingsMenu(self):
+        pyremlegacyui.settingsUI()
+
 
 if __name__ == "__main__":
     import sys

@@ -104,3 +104,4 @@ venv.bak/
 .mypy_cache/
 19.08.26-15..54..51- MD5 check on pyremverdata.txt.txt
 *.pitwocal
+saves/19.txt

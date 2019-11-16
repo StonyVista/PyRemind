@@ -6,6 +6,14 @@ try:
 except:
 	pass
 
+def getVersionInfo():
+	try:
+		f = open('pyremverdata.txt','r')
+		return f.readlines()[1].rstrip()
+		f.close()
+	except:
+		return '???'
+
 #load editable non-constant data from the file
 def loadSaveFromDate(datestr):
 	date = datestr.split('/')

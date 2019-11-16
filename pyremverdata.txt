@@ -1,2 +1,2 @@
 pyRemind
-0.0.1
+GUI-T-1
