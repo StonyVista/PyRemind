@@ -1,5 +1,5 @@
 # PyRemind
 A reminder program made in python.
 
-THIS PROGRAM IS UNDER CONSTRUCTION AND IS NOT IN A USABLE STATE.
-(also, it is an ugly, inefficient mess that is based on an old program that I worte a year ago.)
+pyRemind is currently in very early development so you should expect bugs! 
+(I am aware that the main GUI is very inefficient, it's based on the calendar GUI from my old weird python virtual assistant thing (you can find that in the my-old-useless-programs repository))
