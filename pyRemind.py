@@ -10,11 +10,14 @@ def modifyCheck(fname, sethash):
     if sethash != existinghash:
         print('The file:',fname,'has been modified. The program will try to run but this file may cause errors.')
 
-modifyCheck('pyremverdata.txt','8ff2dd7ad4400388ed4fb306d5a6c2a2')
+try:
+    modifyCheck('pyremverdata.txt','8ff2dd7ad4400388ed4fb306d5a6c2a2')
 
-f = open('pyremverdata.txt')
-prgdata = f.readlines()
-f.close()
+    f = open('pyremverdata.txt')
+    prgdata = f.readlines()
+    f.close()
+except:
+    prgdata = ['Info file not found','Unknown Version']
 
 username = "''"
 font = 'font.ttf'
